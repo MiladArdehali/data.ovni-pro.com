@@ -1,3 +1,10 @@
+<?php 
+session_start();
+$_SESSION['serveur'] = 'localhost';
+$_SESSION['loginBDD'] = 'root';
+$_SESSION['password'] = 'formation';
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

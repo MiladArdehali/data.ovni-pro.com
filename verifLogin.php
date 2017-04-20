@@ -1,23 +1,27 @@
 <?php 
-
+session_start();
 
 function verifIdentification(){
 	try {
+
 		$login = $_POST['login'];
 		$pass = $_POST['motDePasse'];
-		$serveur = "mysql.hostinger.fr";
-		$loginBDD = "u652047723_milad";
-		$password = "bmw530d2002";
-		$connexion = new PDO("mysql:host=$serveur;dbname=u652047723_data",$loginBDD,$password);
+		$serveur = "localhost";
+		$loginBDD = "root";
+		$password = "formation";
+		$connexion = new PDO("mysql:host=$serveur;dbname=data",$loginBDD,$password);
 		$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$codeSQL = "SELECT password FROM user WHERE login="."'".$login."'";
 		$motDePasseBDD = $connexion->query($codeSQL);
 		$val = $motDePasseBDD->fetch();
 		$valpass = $val['password'];
 		if($valpass==$pass){
-			echo "<h3>mot de passe correct. <a href=\"tableauDeBord.php\">Cliquez ici pour acceder au tableau de bord</a></h3>";
+			$_SESSION["login"] = $login;
+			echo "<h3>mot de passe correct.";
+			echo "<p><form action=\"tableauDeBord.php\"><input type=\"submit\" value =\"Cliquez ici pour acceder au tableau de bord\"></form></p>";
 		}else{
-			echo "<h3>mot de passe incorrect. <a href=\"index.php\">Cliquez ici pour acceder au tableau de bord</a></h3>";
+			echo "<h3>mot de passe incorrect.";
+			echo "<p><form action=\"index.php\"><input type=\"submit\" value =\"Cliquez ici pour revenir a la page d'acceuil\"></form></p>";
 		}
 		
 	} catch (Exception $e) {
@@ -39,6 +43,9 @@ if($_POST['login']!=null && $_POST['motDePasse']!=null){
 <title>Bienvenue <?php echo $_POST['login']?></title>
 </head>
 <body>
+<br><br>
+
+
 
 </body>
 </html>
