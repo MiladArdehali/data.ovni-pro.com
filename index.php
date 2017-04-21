@@ -1,9 +1,9 @@
 <?php 
 session_start();
-$_SESSION['serveur'] = 'localhost';
-$_SESSION['loginBDD'] = 'root';
-$_SESSION['password'] = 'formation';
-$_SESSION['database'] = 'data';
+$_SESSION['serveur'] = 'mysql.hostinger.fr';
+$_SESSION['loginBDD'] = 'u652047723_milad';
+$_SESSION['password'] = 'bmw530d2002';
+$_SESSION['database'] = 'u652047723_data';
 
 ?>
 <!DOCTYPE html>
