@@ -7,9 +7,10 @@ session_start();
 <title>Tableau de bord de <?php echo $_SESSION['login'] ?></title>
 <meta charset="UTF-8">
 <link rel="stylesheet" media="screen" type="text/css" title="page_web" href="css/style.css"/>
+<?php include 'header.php'; ?>
 </head>
 <body>
-<h3 align="center" style="color: green;">Bienvenue sur votre tableau de bord</h3>
+<h3 align="center" style="color: green;">Bienvenue sur votre tableau de bord <?= $_SESSION['login']?></h3>
 
 <form action="ConfirmForm.php" method="POST">
 	<p align="center"><label for="date">Saisir la date du suivi : </label>
@@ -19,7 +20,7 @@ session_start();
 	<p align="center"><label for="nomAnnexe">Y a qu'il un annexe? Si oui quel est son nom ? </label>
 	<input type ="text" name="nomAnnexe" id="nomAnnexe"></p>
 	<p align="center"><label for="commentaire">Saisir le ou les commentaires ici : </label>
-	<input type ="text" name="commentaire" id="commentaire">*</p>
+	<textarea name="commentaire" rows="10" cols="50"></textarea>*
 	<p align="center"><label for="projet">Quel est le theme du projet concerné ? </label>
 	<input type ="text" name="projet" id="projet">*</p>
 	<p align="center"><label for="techno">quel est la technologie concerné ? </label>
@@ -30,4 +31,7 @@ session_start();
 <p align="center"><a href="index.php"><input type="button" value="Deconnection" id="button"></a></p>
 </form>
 </body>
+<footer>
+<h6><center><?php include 'piedDePage.php';?></center></h6>
+</footer>
 </html>

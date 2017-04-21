@@ -11,7 +11,8 @@ $_SESSION['database'] = 'u652047723_data';
 <head>
 <title>Page de login</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" media="screen" type="text/css" title="page_web" href="css/style.css"/> 
+<link rel="stylesheet" media="screen" type="text/css" title="page_web" href="css/style.css"/>
+<?php include 'header.php'; ?>
 </head>
 <body>
 <div id="cadre">
@@ -29,5 +30,9 @@ $_SESSION['database'] = 'u652047723_data';
 	</p>
 </form>
 </div>
+
 </body>
+<footer>
+<h6><center><?php include 'piedDePage.php';?></center></h6>
+</footer>
 </html>
