@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bienvenue <?php echo $_POST['login']?></title>
+<meta charset="UTF-8">
+<link rel="stylesheet" media="screen" type="text/css" title="page_web" href="css/style.css"/> 
+</head>
+<body>
+<br><br>
+<div id="cadre">
 <?php 
 session_start();
 
@@ -6,10 +16,11 @@ function verifIdentification(){
 
 		$login = $_POST['login'];
 		$pass = $_POST['motDePasse'];
-		$serveur = "localhost";
-		$loginBDD = "root";
-		$password = "formation";
-		$connexion = new PDO("mysql:host=$serveur;dbname=data",$loginBDD,$password);
+		$serveur = $_SESSION['serveur'];
+		$loginBDD = $_SESSION['loginBDD'];
+		$password = $_SESSION['password'];
+		$database = $_SESSION['database'];
+		$connexion = new PDO("mysql:host=$serveur;dbname=$database",$loginBDD,$password);
 		$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$codeSQL = "SELECT password FROM user WHERE login="."'".$login."'";
 		$motDePasseBDD = $connexion->query($codeSQL);
@@ -17,35 +28,26 @@ function verifIdentification(){
 		$valpass = $val['password'];
 		if($valpass==$pass){
 			$_SESSION["login"] = $login;
-			echo "<h3>mot de passe correct.";
-			echo "<p><form action=\"tableauDeBord.php\"><input type=\"submit\" value =\"Cliquez ici pour acceder au tableau de bord\"></form></p>";
+			echo "<h3><center>mot de passe correct.</center></h3>";
+			echo "<p><center><a href=\"tableauDeBord.php\"><input type=\"button\" value=\"Cliquez ici pour acceder au tableau de bord\" id=\"button\"></a></center></p>";
 		}else{
-			echo "<h3>mot de passe incorrect.";
-			echo "<p><form action=\"index.php\"><input type=\"submit\" value =\"Cliquez ici pour revenir a la page d'acceuil\"></form></p>";
+			echo "<h3><center>mot de passe incorrect.</center><h3>";
+			echo "<p><center><a href=\"index.php\"><input type=\"button\" value=\"Cliquez ici pour revenir a la page d'acceuil\" id=\"button\"></a></center></p>";
 		}
 		
 	} catch (Exception $e) {
-		echo "erreur lors de la saisie de vos identifiants, pour recommancer cliquer <a href=\"index.php\">ici</a> <br>";
-		echo "voici le code erreur SQL : ".$e->getMessage();
+		echo "<center>erreur lors de la saisie de vos identifiants, pour recommancer cliquer <a href=\"index.php\">ici</a></center> <br>";
+		echo "<center>voici le code erreur SQL : </center>".$e->getMessage();
 	}
 }
 if($_POST['login']!=null && $_POST['motDePasse']!=null){
 	verifIdentification();	
 	}else{
-		echo "erreur lors de la saisie de vos identifiants, pour recommancer cliquer <a href=\"index.php\">ici</a> <br>";
+		echo "<center>erreur lors de la saisie de vos identifiants, pour recommancer cliquer <a href=\"index.php\">ici</a></center> <br>";
 	}
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Bienvenue <?php echo $_POST['login']?></title>
-</head>
-<body>
-<br><br>
-
-
+</div>
 
 </body>
 </html>
