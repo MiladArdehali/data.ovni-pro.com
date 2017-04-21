@@ -9,7 +9,7 @@ session_start();
 <link rel="stylesheet" media="screen" type="text/css" title="page_web" href="css/style.css"/>
 </head>
 <body>
-<h3 align="center" style="color: green;">Bienvenue sur votre tableau de bord</h3>
+<h3 align="center" style="color: green;">Bienvenue sur votre tableau de bord <?= $_SESSION['login']?></h3>
 
 <form action="ConfirmForm.php" method="POST">
 	<p align="center"><label for="date">Saisir la date du suivi : </label>

@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+#cadre {
+	border: outset;
+	border-style: groove;
+	border-radius: 10px;
+	width: 600px;
+	height: auto;
+	box-shadow: 6px 6px 0px grey;
+	margin: auto;
+	margin-top: 100px;
+}
+
+#button {
+	border-style: outset;
+	border-color: green;
+	border-radius: 10px;
+	
+}
+
+#commentaire{
+	min-width: 400px;
+	min-height: 100px;
+}
