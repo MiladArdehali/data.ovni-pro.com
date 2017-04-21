@@ -16,8 +16,8 @@ function envoyerValeur(){
 
 		$statement->execute();
 		
-		echo '<p align="center">Vos informations on bien ete transmis à la base de
-		donnée</p>';
+		echo '<p align="center">Vos informations on bien ete transmis a la base de
+		donnee</p>';
 
 	}catch (Exception $e){
 		echo "erreur lors de l'enregistrement dans la base de donnée, assurez vous d'avoir correctement rempli tous les informations ";
@@ -31,31 +31,14 @@ envoyerValeur();
 <!DOCTYPE html>
 <html>
 <head>
+<title>Bonjour <?php echo $_SESSION['login']?></title>
 <meta charset="UTF-8">
-<title>Bonjour <?php echo $_SESSION['login']?>
-</title>
+<link rel="stylesheet" media="screen" type="text/css" title="page_web" href="css/style.css"/>
 </head>
 <body>
 	<br>
 	<br>
-	<br>
-	<form action="tableauDeBord.php">
-		<p align="center">
-			<input type="submit" value="Retour au menu">
-		</p>
-
-	</form>
-
-
-	<form action="index.php">
-		<p align="center">
-			<input type="submit" value="Deconnexion">
-		</p>
-		
-
-	</form>
-
-
-
+		<p align="center"><a href="tableauDeBord.php"><input type="button" value="Retour au tableau de bord" id="button"></a></p>
+		<p align="center"><a href="index.php"><input type="button" value="Deconnexion" id="button"></a></p>
 </body>
 </html>
