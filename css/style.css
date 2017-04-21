@@ -17,3 +17,8 @@
 	border-radius: 10px;
 	
 }
+
+#commentaire{
+	min-width: 400px;
+	min-height: 100px;
+}
