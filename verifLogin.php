@@ -4,6 +4,7 @@
 <title>Bienvenue <?php echo $_POST['login']?></title>
 <meta charset="UTF-8">
 <link rel="stylesheet" media="screen" type="text/css" title="page_web" href="css/style.css"/> 
+<?php include 'header.php'; ?>
 </head>
 <body>
 <br><br>
@@ -48,6 +49,8 @@ if($_POST['login']!=null && $_POST['motDePasse']!=null){
 
 ?>
 </div>
-
 </body>
+<footer>
+<h6><center><?php include 'piedDePage.php';?></center></h6>
+</footer>
 </html>

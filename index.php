@@ -1,9 +1,9 @@
 <?php 
 session_start();
-$_SESSION['serveur'] = 'mysql.hostinger.fr';
-$_SESSION['loginBDD'] = 'u652047723_milad';
-$_SESSION['password'] = 'bmw530d2002';
-$_SESSION['database'] = 'u652047723_data';
+$_SESSION['serveur'] = 'localhost';
+$_SESSION['loginBDD'] = 'root';
+$_SESSION['password'] = 'formation';
+$_SESSION['database'] = 'data';
 
 ?>
 <!DOCTYPE html>
@@ -11,7 +11,8 @@ $_SESSION['database'] = 'u652047723_data';
 <head>
 <title>Page de login</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" media="screen" type="text/css" title="page_web" href="css/style.css"/> 
+<link rel="stylesheet" media="screen" type="text/css" title="page_web" href="css/style.css"/>
+<?php include 'header.php'; ?>
 </head>
 <body>
 <div id="cadre">
@@ -29,5 +30,9 @@ $_SESSION['database'] = 'u652047723_data';
 	</p>
 </form>
 </div>
+
 </body>
+<footer>
+<h6><center><?php include 'piedDePage.php';?></center></h6>
+</footer>
 </html>
