@@ -28,7 +28,7 @@ session_start();
 	<p align="center"><input type="submit" value="valider et transmettre à la base de donnée" id="button"></p>
 </form>
 <br>
-<p align="center"><a href="index.php"><input type="button" value="Deconnection" id="button"></a></p>
+<p align="center"><a href="connect.php"><input type="button" value="Deconnection" id="button"></a></p>
 </form>
 </body>
 <footer>
