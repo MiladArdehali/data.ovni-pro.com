@@ -1,2 +1,2 @@
 <?php
-echo "<center><img alt=\"logo\" src=\"img/logo.png\" id=\"logo\" id=\"logo\"></center>";
+echo "<center><img alt='log' src='logo/logo.png' id='logo' id='logo'></center>";
